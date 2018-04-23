@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageData xmlns="http://www.fbtest.com/pageData"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="../../src/test/resources/xsd/pageData.xsd ">
+          
+<configuration id='config0'>
+  <username>mno</username>
+  <password>pqr</password>
+</configuration>
+<configuration id='config1'>
+  <username>xyz</username>
+  <password>wxy</password>
+</configuration>
+<configuration id='config2'>
+  <username>abc</username>
+  <password>def</password>
+</configuration>
+</pageData>

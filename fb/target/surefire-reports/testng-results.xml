@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="fbsuite" duration-ms="21" started-at="2018-04-23T17:15:59Z" finished-at="2018-04-23T17:15:59Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="21" started-at="2018-04-23T17:15:59Z" finished-at="2018-04-23T17:15:59Z">
+      <class name="com.fb.test.friendlist.FriendList">
+        <test-method status="PASS" signature="f()[pri:0, instance:com.fb.test.friendlist.FriendList@12abadc]" name="f" duration-ms="7" started-at="2018-04-23T22:45:59Z" finished-at="2018-04-23T22:45:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+      </class> <!-- com.fb.test.friendlist.FriendList -->
+      <class name="com.fb.test.profile.Profile">
+        <test-method status="PASS" signature="f()[pri:0, instance:com.fb.test.profile.Profile@73f623]" name="f" duration-ms="0" started-at="2018-04-23T22:45:59Z" finished-at="2018-04-23T22:45:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+      </class> <!-- com.fb.test.profile.Profile -->
+    </test> <!-- Test -->
+  </suite> <!-- fbsuite -->
+</testng-results>

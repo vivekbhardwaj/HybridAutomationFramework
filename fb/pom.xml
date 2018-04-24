@@ -35,21 +35,22 @@
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
-			<version>2.2.5</version>
+			<version>2.2.6</version>
 		</dependency>
 		<dependency>
-			<groupId>com.sun.xml.bind</groupId>
+			<groupId>javax.xml</groupId>
 			<artifactId>jaxb-impl</artifactId>
-			<version>2.2.5</version>
+			<version>2.1</version>
 		</dependency>
-	</dependencies>
+	
+</dependencies>
 	<build>
 		<resources>
 			<resource>
 				<directory>src/test/resources</directory>
 			</resource>
 		</resources>
-		<pluginManagement>
+		
 			<plugins>
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -68,7 +69,7 @@
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>
-				<plugin>
+				<!-- <plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>jaxb2-maven-plugin</artifactId>
 					<version>2.2</version>
@@ -76,14 +77,14 @@
 						<execution>
 							<id>pageData-testXjc</id>
 							<goals>
-								<goal>xjc</goal>
+								<goal>testXjc</goal>
 							</goals>
 							<configuration>
-								<outputDirectory>${basedir}/src/test/generated</outputDirectory>
-								<schemaDirectory>${basedir}/src/test/resources/xsd</schemaDirectory>
+								<outputDirectory>${project.basedir}/src/test/generated</outputDirectory>
+								<schemaDirectory>${project.basedir}/src/test/resources/xsd</schemaDirectory>
 								<schemaFiles>pageData.xsd</schemaFiles>
 								<packageName>com.fb.test.xsd</packageName>
-								<staleFile>${basedir}/src/test/generated/.pageDataXjcStaleFlag</staleFile>
+								<staleFile>${project.basedir}/src/test/generated/.pageDataXjcStaleFlag</staleFile>
 							</configuration>
 						</execution>
 					</executions>
@@ -92,7 +93,7 @@
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>build-helper-maven-plugin</artifactId>
-					<version>1.8</version>
+					<version>3.0.0</version>
 					<executions>
 						<execution>
 							<phase>generate-test-sources</phase>
@@ -106,8 +107,36 @@
 							</configuration>
 						</execution>
 					</executions>
+				</plugin>-->
+
+				<plugin>
+					<!-- jaxb plugin -->
+					<groupId>org.jvnet.jaxb2.maven2</groupId>
+					<artifactId>maven-jaxb2-plugin</artifactId>
+					<version>0.13.3</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>generate</goal>
+							</goals>
+							<configuration>
+								<!-- the package for the generated java classes -->
+								<generatePackage>com.fb.test.xsd</generatePackage>
+								<!-- If the following not specified all xsd in resources are included -->
+								<schemaDirectory>src/test/resources/xsd</schemaDirectory>
+								<generateDirectory>${project.basedir}/src/test/generated</generateDirectory>
+								<generatePackage>com.fb.test.generatedClasses</generatePackage>
+								<!-- if you don't want old output -->
+								<removeOldOutput>true</removeOldOutput>
+								<!-- if you want verbosity -->
+								<!-- verbose>true</verbose -->
+							</configuration>
+						</execution>
+					</executions>
 				</plugin>
+
+
 			</plugins>
-		</pluginManagement>
+		
 	</build>
 </project>
